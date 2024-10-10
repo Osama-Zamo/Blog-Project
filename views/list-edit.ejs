@@ -1,0 +1,105 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <form action="/edit" method="POST">
+                    <h4 class="fst-italic">Recent posts</h4>
+                    <ul class="list-unstyled overflow-auto" style="height: 385px;">
+
+                        <% data.forEach((element, index)=> { %>
+                            <li>
+                                <div
+                                    class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top">
+                                    <svg class="bd-placeholder-img" width="100%" height="96"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <rect width="100%" height="100%" fill="#777"></rect>
+                                    </svg>
+                                    <div class="col-lg-8">
+                                        <h6 h6 class="mb-0">
+                                            <%= element.title %>
+                                        </h6>
+                                        <small class="text-body-secondary">
+                                            <%= element.today %>
+                                        </small>
+                                    </div>
+                                    <div class="form-check pe-3">
+                                        <input class="form-check-input" type="radio" name="radio" value="<%= index %>">
+                                        <label class="form-check-label">
+                                            Select
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <% }) %>
+
+                                <li>
+                                    <div class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                        href="#">
+                                        <svg class="bd-placeholder-img" width="100%" height="96"
+                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                                            <rect width="100%" height="100%" fill="#777"></rect>
+                                        </svg>
+                                        <div class="col-lg-8">
+                                            <h6 class="mb-0">Example blog post title</h6>
+                                            <small class="text-body-secondary">January 15, 2024</small>
+                                        </div>
+                                        <div class="form-check pe-3">
+                                            <input class="form-check-input" type="radio" disabled>
+                                            <label class="form-check-label">
+                                                Select
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                        href="#">
+                                        <svg class="bd-placeholder-img" width="100%" height="96"
+                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                                            <rect width="100%" height="100%" fill="#777"></rect>
+                                        </svg>
+                                        <div class="col-lg-8">
+                                            <h6 class="mb-0">This is another blog post title</h6>
+                                            <small class="text-body-secondary">January 14, 2024</small>
+                                        </div>
+                                        <div class="form-check pe-3">
+                                            <input class="form-check-input" type="radio" disabled>
+                                            <label class="form-check-label">
+                                                Select
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li></li>
+                                <div class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <rect width="100%" height="100%" fill="#777"></rect>
+                                    </svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                                        <small class="text-body-secondary">January 13, 2024</small>
+                                    </div>
+                                    <div class="form-check pe-3">
+                                        <input class="form-check-input" type="radio" disabled>
+                                        <label class="form-check-label">
+                                            Select
+                                        </label>
+                                    </div>
+                                </div>
+                                </li>
+                    </ul>
+                    <input class="btn btn-outline-primary rounded-pill px-3 my-3" type="submit" value="Edit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
